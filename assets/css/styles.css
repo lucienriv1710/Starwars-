@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap');
+
+
+/* ========================================
+   TD - Site OnePage - STAR WARS - 2025
+   Sélecteurs simples et combinés uniquement
+
+Trouvez les bons sélecteurs CSS pour cibler précisément chaque élément HTML et reproduire le rendu visuel attendu en appliquant les styles demandés.
+
+Vous trouvez les styles demandés dans les commentaires ainsi que les explications des propriétés utilisées.
+   ======================================== */
+
+
+
+/* ========================================
+   SECTION 1 : RESET ET BASE FONDAMENTALE
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 1/60]
+   Déclarations CSS qui s'appliquent à l'ensemble des éléments de la page  :
+   - margin : 0 (supprimer les marges par défaut du navigateur)
+   - padding : 0 (supprimer les espacements internes par défaut)
+   - box-sizing : border-box (inclure bordures et padding dans la largeur totale)
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+   [SÉLECTEUR 2/60]
+   Déclarations CSS qui s'appliquent à l'élément racine de votre document (html) :
+   - font-size : 16px (taille de base pour tous les textes)
+*/
+html{
+    font-size: 16px;
+}
+
+/* 
+   [SÉLECTEUR 3/60]
+   Déclarations CSS qui s'appliquent au corps de la page :
+   - font-family : définit la police d'écriture ici 'Montserrat' ou sans-serif en secours
+   - background : dégradé spatial avec nuances de bleu et noir
+   - color : (couleur de texte)
+   - min-height : 100vh (hauteur minimale de la fenêtre)
+   - line-height : l'espacement entre les lignes
+*/
+body{
+    font-family: 'montserrat', sans-serif;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2a1a4a 70%, #1a1a3a 100%);
+    color: #f0f8ff;
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+/* ========================================
+   SECTION 2 : EN-TÊTE DU SITE
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 4/60]
+   Déclarations CSS qui s'appliquent à l'en-tête du site :
+   - background : dégradé sombre élégant
+   - padding : permet de définir la marge intérieure (40px en haut et en bas, 0 à gauche et à droite)
+   - text-align : center (centrer tout le contenu)
+   - border-bottom : bordure dorée de séparation
+   - box-shadow : ombre portée pour donner de la profondeur
+*/
+#site-header {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 66, 0.8) 50%, rgba(0, 0, 0, 0.9) 100%);
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 2px solid #ffd700;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* 
+   [SÉLECTEUR 5/60]
+   Déclarations CSS qui s'appliquent au titre principal dans l'en-tête :
+   - font-family : 'Orbitron'
+   - font-size : permet de définir la taille du texte 
+   - font-weight : pour définir l'épaisseur du texte
+   - color : #ffd700 pour la couleur du texte
+   - text-shadow : permet une ombre sur le texte
+   - letter-spacing : définit l'espacement entre les lettres
+   - margin-bottom : pour la maarge externe en bas du titre
+*/
+#site-header h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 3.2em;
+    font-weight: 900;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+/* 
+   [SÉLECTEUR 6/60]
+   Déclarations CSS qui s'appliquent au conteneur de navigation :
+   - margin-top : 25px (espace au-dessus de la navigation)
+*/
+#site-header nav {
+        margin-top: 25px;
+    }
+
+/* 
+   [SÉLECTEUR 7/60]
+   Déclarations CSS qui s'appliquent à la liste de navigation :
+   - list-style : none (supprimer les puces)
+   - display : flex (disposition horizontale flexible)
+   - justify-content : center (centrer les éléments)
+   - flex-wrap : wrap (retour à la ligne si nécessaire)
+   - gap : 30px (espace uniforme entre tous les éléments)
+*/
+#site-header ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* 
+   [SÉLECTEUR 8/60]
+   Déclarations CSS qui s'appliquent aux liens de navigation (#site-header a) :
+   - color : #87ceeb 
+   - text-decoration : permet de supprimer le soulignement des liens en utilisant "none"
+   - font-weight : 600 
+   - font-size : 1.1em 
+   - padding : 12px 24px
+   - border : border permet de définir une bordure 
+   - border-radius : permet de définir des bords arrondis des coins 
+   - background : linear-gradient permet de faire un dégradé linéaire
+   - transition : 0.3s ease pour définir la durée et le type d'animation lors des changements d'état
+*/
+#site-header a{
+    color: #87ceeb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    background: linear-gradient(135deg, rgba(135, 206, 235, 0.1), rgba(255, 215, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   SECTION 3 : CONTENU PRINCIPAL
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 9/60]
+   Déclarations CSS qui s'appliquent au conteneur principal du contenu:
+   - max-width : permet de définir la largeur maximale (1200px ici)
+   - margin : permet de centrer horizontalement le conteneur (0 auto)
+   - padding : 60px 30px (espacements internes)
+*/
+
+#site-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+/* 
+   [SÉLECTEUR 10/60]
+   Déclarations CSS qui s'appliquent à toutes les sections du contenu (section) :
+   - margin-bottom : 80px 
+   - padding : 50px 
+   - background : dégradé linéaire
+   - border-radius : 20px (coins très arrondis)
+   - box-shadow : permet de de faire une ombre sur le conteneur
+   - border : pour définir une bordure 
+*/
+section {
+    margin-bottom: 80px;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(46, 26, 66, 0.8) 50%, rgba(26, 26, 46, 0.9) 100%);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(135, 206, 235, 0.2);
+}
+
+/* 
+   [SÉLECTEUR 11/60]
+   Déclarations CSS qui s'appliquent aux titres principaux de toutes les sections :
+   - font-family : 'Orbitron' 
+   - font-size : 2.8em
+   - font-weight : 700 
+   - color : #ffd700
+   - text-align : center (centré dans chaque section)
+   - margin-bottom : 40px 
+   - text-shadow : ombre sur le texte
+   - letter-spacing : 2px (espacement des lettres)
+*/
+section h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* 
+   [SÉLECTEUR 12/60]
+   Déclarations CSS qui s'appliquent aux sous-titres dans les sections  :
+   - font-size : 2.2em 
+   - font-weight : 600 
+   - color : #87ceeb 
+   - margin : 40px 0 25px 0 pour définir les marges (40px en haut, 0 à droite et à gauche, 25px en bas)
+   - border-left : pour l'épaisseur de la bordure du coté gauche
+   - padding-left : 20px  margen intérieure gauche
+   - text-shadow : ombre sur le texte
+*/
+section h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: #87ceeb;
+    margin: 40px 0 25px 0;
+    border-left: 5px solid #ffd700;
+    padding-left: 20px;
+    text-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 13/60]
+   Déclarations CSS qui s'appliquent à tous les paragraphes dans les sections :
+*/
+section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+    color: #f0f8ff;
+}
+
+/* ========================================
+   SECTION 4 : SECTION WELCOME SPÉCIALE
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 14/60]
+   Déclarations CSS qui s'appliquent spécifiquement à la section d'accueil :
+
+*/
+#welcome {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(26, 26, 66, 0.95) 0%, rgba(66, 26, 86, 0.9) 30%, rgba(26, 66, 106, 0.9) 70%, rgba(26, 26, 66, 0.95) 100%);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+}
+
+/* ========================================
+   SECTION 5 : ÉLÉMENTS MULTIMÉDIAS
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 15/60]
+   Déclarations CSS qui s'appliquent à toutes les vidéos :
+
+*/
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 8px 25px rgba(0, 162, 255, 0.3);
+    border: 2px solid rgba(135, 206, 235, 0.2);
+}
+
+/* 
+   [SÉLECTEUR 16/60]
+   Déclarations CSS qui s'appliquent à toutes les images :
+
+*/
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* 
+   [SÉLECTEUR 17/60]
+   Déclarations CSS qui s'appliquent aux images avec la classe align-right :
+   - float : right (alignement à droite avec habillage de texte)
+*/
+.align-right {
+    float: right;
+    margin: 0 0 25px 30px;
+    max-width: 220px;
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* ========================================
+   SECTION 6 : ÉLÉMENTS DE TEXTE STYLISÉS
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 18/60]
+   Déclarations CSS qui s'appliquent à l'ensemble des balises html <strong> :
+ 
+*/
+strong {
+    color: #ffd700;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 19/60]
+   Déclarations CSS qui s'appliquent à l'ensemble des éléments html <b> :
+
+*/
+b {
+    color: #87ceeb;
+    font-weight: 600;
+    text-shadow: 0 0 3px rgba(135, 206, 235, 0.2);
+}
+
+/* 
+   [SÉLECTEUR 20/60]
+   Déclarations CSS qui s'appliquent à l'ensemble des éléments html <em> :
+
+*/
+em {
+    color: #ffd700;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* 
+   [SÉLECTEUR 21/60]
+   Déclarations CSS qui s'appliquent à l'ensemble des éléments html <cite> :
+
+*/
+cite {
+    color: #87ceeb;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* 
+   [SÉLECTEUR 22/60]
+   Déclarations CSS qui s'appliquent à l'ensemble des éléments html <blockquote> :
+
+*/
+blockquote {
+    background: linear-gradient(135deg, rgba(42, 42, 62, 0.9), rgba(62, 42, 82, 0.8));
+    border-left: 6px solid #ffd700;
+    padding: 35px;
+    margin: 40px 0;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: 300;
+    color: #ffd700;
+    text-align: center;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+}
+
+/* 
+   [SÉLECTEUR 23/60]
+   Déclarations CSS qui s'appliquent à tous les liens généraux :
+*/
+a {
+    color: #87ceeb;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted #87ceeb;
+    transition: all 0.3s ease;
+}
+
+/* 
+   [SÉLECTEUR 24/60]
+   Déclarations CSS qui s'appliquent aux séparateurs horizontaux  :
+*/
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700 20%, #ffed4e 50%, #ffd700 80%, transparent);
+    margin: 50px 0;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* ========================================
+   SECTION 7 : TABLEAUX 
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 25/60]
+   Déclarations CSS qui s'appliquent à tous les tableaux :
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    background: linear-gradient(135deg, rgba(42, 42, 62, 0.9), rgba(62, 42, 82, 0.8));
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(135, 206, 235, 0.2);
+}
+
+/* 
+   [SÉLECTEUR 26/60]
+   Déclarations CSS qui s'appliquent aux en-têtes de tableau :
+
+*/
+thead {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+    color: #000;
+    padding: 18px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 27/60]
+   Déclarations CSS qui s'appliquent aux cellules de tableau:
+*/
+td {
+   padding: 15px;
+   border-bottom: 1px solid rgba(135, 206, 235, 0.2);
+   text-align: center;
+   color: #f0f8ff;
+   font-size: 1em;
+   transition: all 0.3s ease;
+}
+
+/* 
+   [SÉLECTEUR 28/60]
+   Déclarations CSS qui s'appliquent aux cellules ayanbt la classe "informations" :
+
+*/
+.informations {
+   background-color: rgba(51, 51, 71, 0.8);
+   font-weight: bold;
+   color: #ffd700;
+   text-align: left;
+   padding-left: 20px;
+}
+
+/* ========================================
+   SECTION 8 : FORMULAIRE
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 29/60]
+   Déclarations CSS qui s'appliquent au formulaire :
+*/
+form {
+   max-width: 700px;
+   margin: 0 auto;
+   padding: 40px;
+   background: linear-gradient(135deg, rgba(42, 42, 72, 0.95) 0%, rgba(62, 42, 92, 0.9) 50%, rgba(42, 42, 72, 0.95) 100%);
+   border-radius: 20px;
+   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+   border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 30/60]
+   Déclarations CSS qui s'appliquent aux paragraphes dans le formulaire:
+
+*/
+form p {
+   margin-bottom: 25px;
+   text-align: left;
+}
+
+/* 
+   [SÉLECTEUR 31/60]
+   Déclarations CSS qui s'appliquent aux labels du formulaire:
+   - display : block permet de forcer le label à occuper toute la largeur disponible
+*/
+form label {
+   color: #87ceeb;
+   font-weight: 600;
+   font-size: 1.1em;
+   margin-bottom: 8px;
+   display: block;
+}
+
+/* 
+   [SÉLECTEUR 32/60]
+   Déclarations CSS qui s'appliquent aux champs de saisie  :
+*/
+input {
+   background: linear-gradient(135deg, rgba(51, 51, 71, 0.9), rgba(71, 51, 91, 0.8));
+   border: 2px solid rgba(135, 206, 235, 0.3);
+   color: #f0f8ff;
+   padding: 12px 16px;
+   border-radius: 10px;
+   font-size: 1em;
+   transition: all 0.3s ease;
+   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+   [SÉLECTEUR 33/60]
+   Déclarations CSS qui s'appliquent aux champs de type texte  :
+ */
+input[type="text"]{ 
+   width: 100%;
+   margin-top: 8px;
+}
+
+/* 
+   [SÉLECTEUR 34/60]
+   Déclarations CSS qui s'appliquent aux boutons radio :
+*/
+input[type="radio"] {
+   accent-color: #ffd700;
+   display: inline-block;
+   margin-right: 0;
+   vertical-align: middle;
+}
+
+/* 
+   [SÉLECTEUR 35/60]
+   Déclarations CSS qui s'appliquent aux cases à cocher :
+*/
+input[type="checkbox"]  {
+   margin-right: 8px;
+   accent-color: #ffd700;
+}
+
+/* 
+   [SÉLECTEUR 36/60]
+   Déclarations CSS qui s'appliquent au bouton de soumission (input[type="submit"]) :
+   - text-transform : uppercase permet de mettre le texte en majuscules
+*/
+input[type="submit"] {
+   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+   color: #000;
+   border: none;
+   padding: 15px 40px;
+   font-size: 1.2em;
+   font-weight: 700;
+   border-radius: 30px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   box-shadow: 0 5px 15px zrgba(255, 215, 0, 0.4);
+   transition: all 0.3s ease;
+}
+
+/* 
+   [SÉLECTEUR 37/60]
+   Déclarations CSS qui s'appliquent aux listes déroulantes:
+*/
+select{
+   width: 100%;
+   padding: 12px;
+   background: linear-gradient(135deg, rgba(51, 51, 71, 0.9), rgba(71, 51, 91, 0.8));
+   order: 2px solid rgba(135, 206, 235, 0.3);
+   color: #f0f8ff;
+   border-radius: 10px;
+   font-size: 1em;
+   margin-top: 8px;
+}
+
+/* 
+   [SÉLECTEUR 38/60]
+   Déclarations CSS qui s'appliquent aux zones de texte longues:
+*/
+textarea {
+   width: 100%;
+   padding: 12px;
+   background: linear-gradient(135deg, rgba(51, 51, 71, 0.9), rgba(71, 51, 91, 0.8));
+   border: 2px solid rgba(135, 206, 235, 0.3);
+   color: #f0f8ff;
+   border-radius: 10px;
+   font-size: 1em;
+   margin-top: 8px;
+   resize: vertical;
+   font-family: 'Exo 2', sans-serif;
+}
+
+/* ========================================
+   SECTION 9 : PIED DE PAGE
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 39/60]
+   Déclarations CSS qui s'appliquent au pied de page du site:
+*/
+#site-footer {
+   background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(46, 26, 66, 0.9) 50%, rgba(26, 26, 46, 0.95) 100%);
+   padding: 40px 0;
+   text-align: center;
+   border-top: 2px solid #ffd700;
+   margin-top: 60px;
+   box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* 
+   [SÉLECTEUR 40/60]
+   Déclarations CSS qui s'appliquent au paragraphe du pied de page :
+*/
+#site-footer p {
+   color: #87ceeb;
+   font-size: 1.2em;
+   font-weight: 300;
+   margin: 0;
+   text-shadow: 0 0 8px rgba(135, 206, 235, 0.3);
+}
+
+/* ========================================
+   SECTION 10 : SÉLECTEURS COMBINÉS AVANCÉS
+   ======================================== */
+
+/* 
+   [SÉLECTEUR 41/60]
+   Déclarations CSS qui s'appliquent aux vidéos qui suivent directement un h1  :
+*/
+h1 + video{
+   border: 3px solid #ffd700;
+   box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+
+/* 
+   [SÉLECTEUR 42/60]
+   Déclarations CSS qui s'appliquent aux paragraphes qui suivent directement un h2 :
+*/
+h2 + p {
+   margin-top: 15px;
+   font-size: 1.25em;
+}
+
+/* 
+   [SÉLECTEUR 43/60]
+   Déclarations CSS qui s'appliquent aux paragraphes qui suivent une vidéo  :
+*/
+video ~ p {
+   text-align: center;
+   font-style: italic;
+   color: #87ceeb;
+}
+
+/* 
+   [SÉLECTEUR 44/60]
+   Déclarations CSS qui s'appliquent aux liens externes HTTPS :
+*/
+a[href^="https"]{
+   font-weight: bold;
+   color: #98fb98;
+}
+
+/* 
+   [SÉLECTEUR 45/60]
+   Déclarations CSS qui s'appliquent aux éléments <b> dans les formulaires :
+*/
+form b{
+   color: #ffd700;
+   display: block;
+   margin-bottom: 10px;
+}
+
+/* 
+   [SÉLECTEUR 46/60]
+   Déclarations CSS qui s'appliquent aux labels après les boutons radio:
+*/
+input[type="radio"]+label{
+   margin-right: 35px;
+   color: #f0f8ff;
+   display: inline-block;
+   margin-left: 8px;
+}
+
+/* 
+   [SÉLECTEUR 47/60]
+   Déclarations CSS qui s'appliquent aux labels après les cases à cocher :
+*/
+input[type="checkbox"]+label{
+   color: #f0f8ff;
+   margin-bottom: 8px;
+   display: inline-block;
+}
+
+/* 
+   [SÉLECTEUR 48/60]
+   Déclarations CSS qui s'appliquent aux listes directes de navigation :
+   - padding : 0 (pas d'espacement interne)
+   - margin : 0 (pas de marge)
+*/
+nav>ul{
+   padding: 0;
+   margin: 0;
+}
+
+/* 
+   [SÉLECTEUR 49/60]
+   Déclarations CSS qui s'appliquent aux éléments de liste directs:
+   - list-style : none (pas de puces)
+*/
+ul>li{
+   list-style: none;
+}
+
+/* 
+   [SÉLECTEUR 50/60]
+   Déclarations CSS qui s'appliquent aux paragraphes directs du formulaire  :
+*/
+#contact p{
+   border-bottom: 1px solid rgba(135, 206, 235, 0.2);
+   padding-bottom: 20px;
+}
+
+/* 
+   [SÉLECTEUR 51/60]
+   Déclarations CSS qui s'appliquent aux paragraphes qui suivent un h2 :
+
+*/
+h2~p{
+   margin-left: 20px;
+}
+
+/* 
+   [SÉLECTEUR 52/60]
+   Déclarations CSS qui s'appliquent aux cellules qui s'étendent sur plusieurs lignes  :
+   INDICE : rowspan est un attribut HTML pour les cellules de tableau
+*/
+td[rowspan]{
+   background-color: rgba(64, 64, 84, 0.8);
+   font-weight: bold;
+   color: #ffd700;
+}
+
+/* 
+   [SÉLECTEUR 53/60]
+   Déclarations CSS qui s'appliquent aux cellules qui s'étendent sur plusieurs colonnes :
+   INDICE : colspan est un attribut HTML pour les cellules de tableau
+*/
+td[colspan] {
+   background-color: rgba(42, 42, 62, 0.8);
+   font-style: italic;
+}
+
+/* 
+   [SÉLECTEUR 54/60]
+   Déclarations CSS qui s'appliquent aux options des listes déroulantes:
+*/
+option {
+   background-color: rgba(51, 51, 71, 0.9);
+   color: #f0f8ff;
+}
+
+/* 
+   [SÉLECTEUR 55/60]
+   Déclarations CSS qui s'appliquent aux images avec attribut alt :
+
+*/
+img[alt] {
+   border: 1px solid rgba(135, 206, 235, 0.3);
+   padding: 2px;
+}
+
+/* 
+   [SÉLECTEUR 56/60]
+   Déclarations CSS qui s'appliquent aux éléments <em> dans les citations :
+*/
+blockquote em {
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+/* 
+   [SÉLECTEUR 57/60]
+   Déclarations CSS qui s'appliquent aux éléments <b> dans les citations (cite b) :
+   - color : #ffd700 (doré)
+   - text-shadow : ombre de texte dorée
+*/
+cite b {
+   color: #ffd700;
+   text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+}
+
+/* 
+   [SÉLECTEUR 58/60]
+   Déclarations CSS qui s'appliquent aux lignes d'en-tête de tableau  :
+*/
+thead {
+   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+}
+
+/* 
+   [SÉLECTEUR 59/60]
+   Déclarations CSS qui s'appliquent aux cellules d'en-tête dans thead :
+*/
+th {
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+/* 
+   [SÉLECTEUR 60/60]
+   Déclarations CSS qui s'appliquent aux boutons de soumission dans le formulaire  :
+   - cursor : pointer (curseur en forme de main au survol)
+*/
+input[type="submit"]{
+   cursor: pointer;
+   width: 200px;
+   margin: 20px auto 0 auto;
+   display: block;
+}
+
+/* ========================================
+   
+   SÉLECTEURS UTILISÉS :
+   ✓ Sélecteur universel (*)
+   ✓ Sélecteurs de balise (html, body, section, etc.)
+   ✓ Sélecteurs de classe (.selecteur)
+   ✓ Sélecteurs d'ID (#mon-id)
+   ✓ Sélecteurs combinés (selecteur1 selecteur2)
+   ✓ Sélecteurs d'enfant direct (selecteur1 > selecteur2)
+   ✓ Sélecteurs de frère adjacent (selecteur1 + selecteur2)
+   ✓ Sélecteurs de frère général (selecteur1 ~ selecteur2)
+   ✓ Sélecteurs d'attribut (selecteur[attribut], selecteur[attribut="valeur"], etc.)
+   ======================================== */
